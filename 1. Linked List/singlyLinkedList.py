@@ -2,7 +2,7 @@
 class Node:
 
     def __init__(self,data=None):
-        self.data = None
+        self.data = data
         self.next = None
 
 
@@ -18,8 +18,7 @@ class LinkedList(Node):
     
     def insertAtBeginning(self, data):
         # create new node and assign data to it
-        newNode = Node()
-        newNode.data = data
+        newNode = Node(data)
         # if list is empty, make newNode as head
         if self.length ==0:
             self.head = newNode
@@ -32,8 +31,7 @@ class LinkedList(Node):
 
     def insertAtEnd(self, data):
         # create new node and assign data to it
-        newNode = Node()
-        newNode.data = data
+        newNode = Node(data)
         # if list is empty, make newNode as head
         if self.length == 0:
             self.head = newNode
