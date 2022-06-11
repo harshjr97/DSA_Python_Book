@@ -113,6 +113,29 @@ class LinkedList(Node):
                 print(temp.data, end = " -> ")
             temp = temp.next
         print()
+
+
+
+    def reverse(self):
+        # create a current node
+        current = self.head
+        # create a prev node
+        prev = None
+        # create a next node
+        next = None
+        # traverse till current is not None
+        while current != None:
+            # store next node in next
+            next = current.next
+            # make next of current as prev
+            current.next = prev
+            # make prev as current
+            prev = current
+            # make current as next
+            current = next
+        # make prev as head
+        self.head = prev
+
         
 l = LinkedList()
 l.insertAtBeginning(1)
@@ -121,4 +144,6 @@ l.insertAtBeginning(3)
 l.insertAtEnd(4)
 l.insertAtEnd(5)
 l.insertAtPosition(6,2)
+l.printList()
+l.reverse()
 l.printList()
